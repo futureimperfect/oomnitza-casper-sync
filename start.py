@@ -12,14 +12,14 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
+import os
 
 from models.casper_connection import CasperConnection
 from models.oomnitza_connection import OomnitzaConnection
 
-
 # initialize service wrappers
-casper = CasperConnection("config.ini")
-oomnitza = OomnitzaConnection("config.ini")
+casper = CasperConnection(os.path.join(os.path.abspath(os.path.join(__file__, os.pardir)), "config.ini"))
+oomnitza = OomnitzaConnection(os.path.join(os.path.abspath(os.path.join(__file__, os.pardir)), "config.ini"))
 
 
 def main():
